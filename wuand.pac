@@ -1,15 +1,5 @@
-// update: 2017.7.17
-// 鉴于《刑法》、《网络安全法》等法律的有关条款，规则中加入了黑名单，请谅解
 function regExpMatch(url, pattern) {    try { return new RegExp(pattern).test(url); } catch(ex) { return false; }    }
 function FindProxyForURL(url, host) {
-// blacklist
-if (
-  shExpMatch(url, "https://plus.google.com/*") ||
-  shExpMatch(url, "https://www.youtube.com/upload") ||
-  shExpMatch(url, "https://twitter.com/i/tweet/create") ||
-  shExpMatch(url, "https://www.facebook.com/ajax/updatestatus.php*") ||
-  shExpMatch(url, "https://www.facebook.com/ufi/add/comment*") 
-) return "PROXY 127.0.0.1";
 // hosts
 if (
   shExpMatch(url, "https://*.google.com/*") ||
